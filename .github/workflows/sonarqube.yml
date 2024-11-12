@@ -1,49 +1,32 @@
 name: SonarQube Scan
  
 on:
-
   push:
-
     branches:
-
       - main
  
 jobs:
-
   sonarqube:
-
     name: SonarQube Analysis
-
     runs-on: ubuntu-latest
  
     steps:
-
       - name: Checkout code
-
         uses: actions/checkout@v2
  
-      - name: Set up SonarQube
-
+      - name: Set up .NET
         uses: actions/setup-dotnet@v1
-
         with:
-
           dotnet-version: '3.1.x'  # Adjust the version as needed
  
       - name: Install SonarScanner
-
         run: dotnet tool install --global dotnet-sonarscanner
  
       - name: Start SonarScanner
-
-        run: dotnet sonarscanner begin /k:"YourProjectKey" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.login="$SONAR_TOKEN" /d:sonar.branch.name=main
+        run: dotnet sonarscanner begin /k:"YourProjectKey" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.branch.name=main
  
       - name: Build and Test
-
         run: dotnet build
  
       - name: Finish SonarScanner
-
-        run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
-
- 
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
