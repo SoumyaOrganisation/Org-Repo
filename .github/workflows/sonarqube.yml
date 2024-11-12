@@ -46,6 +46,4 @@ jobs:
 
         run: dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
 
-```[_{{{CITATION{{{_1{GitHub Actions workflow & SonarQube - SonarSource](https://docs.sonarsource.com/sonarqube/latest/devops-platform-integration/github-integration/adding-analysis-to-github-actions-workflow/)
- 
  
