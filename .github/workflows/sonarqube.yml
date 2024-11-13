@@ -30,3 +30,4 @@ jobs:
  
       - name: Finish SonarScanner
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        
