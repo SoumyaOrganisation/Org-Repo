@@ -23,7 +23,7 @@ jobs:
         run: dotnet tool install --global dotnet-sonarscanner
  
       - name: Start SonarScanner
-        run:  dotnet sonarscanner begin /k:"SoumyaOrganisation_Org-Repo_f4c8d62a-4ff5-4df2-a958-270e7995d76b" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="your_sonar_token" /d:sonar.branch.name=main
+        run:  dotnet sonarscanner begin /k:"SoumyaOrganisation_Org-Repo_5853ccf2-95da-454c-8227-2a40783bf7f4" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="your_sonar_token" /d:sonar.branch.name=main
  
       - name: Build and Test
         run: dotnet build
