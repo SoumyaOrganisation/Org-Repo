@@ -32,4 +32,5 @@ jobs:
             -Dsonar.projectKey=SoumyaOrganisation_Org-Repo
             -Dsonar.organization=soumyaorganisation
             -Dsonar.sources=.
+            -Dsonar.inclusions=**/*.ps1,**/*.psm1,**/*.psd1
             -Dsonar.language=ps
