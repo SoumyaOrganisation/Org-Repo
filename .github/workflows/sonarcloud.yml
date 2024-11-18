@@ -24,12 +24,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y powershell
       - name: SonarCloud Scan
-        uses: SoumyaOrganisation/Org-Repo@v2.1.0
+        uses: sonarsource/sonarcloud-github-action@v2.1.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=SoumyaOrganisation_Org-Repo
+            -Dsonar.projectKey=SoumyaOrganisation_New_Public_repo
             -Dsonar.organization=soumyaorganisation
             -Dsonar.sources=.
             -Dsonar.inclusions=**/*.ps1,**/*.psm1,**/*.psd1
