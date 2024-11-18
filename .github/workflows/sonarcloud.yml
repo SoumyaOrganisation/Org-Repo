@@ -23,7 +23,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=your_project_key
-            -Dsonar.organization=your_organization_key
+            -Dsonar.projectKey=SoumyaOrganisation_Org-Repo
+            -Dsonar.organization=soumyaorganisation
             -Dsonar.sources=.
             -Dsonar.language=ps
